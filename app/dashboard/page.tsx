@@ -10,7 +10,7 @@ const Dashboard = () => {
     <>
       {token ? (
         <>
-          This is dashboard, you have successfully logged in
+          This is dashboard, you have successfully logged in ....
           <Disconnect token={token as string} setToken={setToken} />
         </>
       ) : (
