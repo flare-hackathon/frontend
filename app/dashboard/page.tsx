@@ -1,11 +1,17 @@
 "use client";
+
 import Disconnect from "@/components/magic/wallet-methods/Disconnect";
 import { useMagicState } from "@/context/magic.provider";
+import { usePostList } from "@/core/queries/post.query";
 import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
   const { token, setToken } = useMagicState();
   const router = useRouter();
+
+  const { data, error } = usePostList();
+  console.log(data, "data");
+  console.log(error, "error");
   return (
     <>
       {token ? (
@@ -14,7 +20,10 @@ const Dashboard = () => {
           <Disconnect token={token as string} setToken={setToken} />
         </>
       ) : (
-        router.push("/auth")
+        (() => {
+          router.push("/auth");
+          return null;
+        })()
       )}
     </>
   );

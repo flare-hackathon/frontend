@@ -16,6 +16,7 @@
     "@wagmi/cli": "^2.2.1",
     "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "lucide-react": "^0.487.0",
     "magic-sdk": "^29.0.5",
     "next": "15.2.4",
